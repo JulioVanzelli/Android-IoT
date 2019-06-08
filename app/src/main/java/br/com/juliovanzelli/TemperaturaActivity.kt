@@ -6,6 +6,9 @@ import android.util.Log
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_iluminacao.*
 import kotlinx.android.synthetic.main.activity_temperatura.*
+import android.content.Intent
+
+
 
 class TemperaturaActivity : AppCompatActivity() {
 
@@ -23,7 +26,7 @@ class TemperaturaActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val value = dataSnapshot.getValue(Double::class.java)
 
-                tvTemperatura.setText(value.toString())
+                tvTemperatura.text = value.toString()
             }
 
             override fun onCancelled(error: DatabaseError) {
